@@ -1,0 +1,1 @@
+deno run -ENR jsr:@std/http/file-server
