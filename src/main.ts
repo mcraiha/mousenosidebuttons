@@ -13,10 +13,17 @@ export function sortTable(tableId: string, columnIndex) {
     sortedRows.forEach(row => table.tBodies[0].appendChild(row));
 }
 
-const sorters: readonly string[] = ["maker", "model", "buttonamount", "sidebuttons", "ambidextrous", "weight", "price"];
+const sortersCurrent: readonly string[] = ["maker", "model", "buttonamount", "sidebuttons", "ambidextrous", "weight", "price"];
+const sortersDiscontinued: readonly string[] = ["makerdis", "modeldis", "buttonamountdis", "sidebuttonsdis", "ambidextrousdis", "weightdis", "pricedis"];
 
-sorters.forEach((value, index) => {
+sortersCurrent.forEach((value, index) => {
     document.getElementById(value)!.addEventListener("click", function() {
       sortTable("current", index)
+    });
+});
+
+sortersDiscontinued.forEach((value, index) => {
+    document.getElementById(value)!.addEventListener("click", function() {
+      sortTable("discontinued", index)
     });
 });
