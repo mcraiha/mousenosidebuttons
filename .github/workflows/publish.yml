@@ -1,6 +1,6 @@
 # Publish project
 
-name: Publish Deno and pust to CloudFlare
+name: Publish Deno and push to CloudFlare
 
 on:
   push:
@@ -15,7 +15,7 @@ jobs:
 
     steps:
       - name: Setup repo
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
 
       - uses: denoland/setup-deno@v2
         with:
